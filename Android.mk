@@ -21,6 +21,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE), loganreltexx)
+ifeq ($(TARGET_DEVICE), goldenlteatt)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

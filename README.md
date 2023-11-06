@@ -1,10 +1,10 @@
-Device Tree For Samsung Galaxy Ace 3 LTE
+Device Tree For Samsung Galaxy S III Mini LTE (AT&T)
 ===================================== 
 
 | Basic   | Spec Sheet                  |
 | -------:|:--------------------------- |
 | CPU     | Dual-core 1.2 GHz Krait 200 | 
-| CHIPSET | Qualcomm Snapdragon 400 |
+| CHIPSET | Qualcomm Snapdragon S4 Plus |
 | GPU     | Adreno 305 |
 | Memory  | 1GB RAM |
 | Shipped Android Version | 4.2.2 |
@@ -15,7 +15,7 @@ Device Tree For Samsung Galaxy Ace 3 LTE
 | Camera  | 5 MP, 2592 x 1944 pixels |
 
 
-![Galaxy Ace 3 LTE](http://www.sammobile.com/wp-content/uploads/2013/06/GALAXY-Ace-3-LTE-1.jpg "Galaxy Ace 3 LTE")
+![Galaxy S III Mini LTE (AT&T)](https://image-us.samsung.com/SamsungUS/pim/migration/mobile/phones/all-other-phones/sm-g730ambaatt/Pdpdefault-sm-g730ambaatt-600x600-C1-052016.jpg "Galaxy S III Mini LTE (AT&T)")
 
 This branch is for building CyanogenMod 11.0 Firmware.
 

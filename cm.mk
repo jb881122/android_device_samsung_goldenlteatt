@@ -4,9 +4,9 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Enhanced NFC
 # $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
-$(call inherit-product, device/samsung/loganreltexx/full_loganreltexx.mk)
+$(call inherit-product, device/samsung/goldenlteatt/full_goldenlteatt.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=loganreltexx TARGET_DEVICE=loganrelte BUILD_FINGERPRINT="samsung/loganreltexx/loganrelte:4.2.2/JDQ39/S7275RXXUANG1:user/release-keys" PRIVATE_BUILD_DESC="loganreltexx-user 4.2.2 JDQ39 S7275RXXUANG1 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=goldenlteatt TARGET_DEVICE=goldenlteatt BUILD_FINGERPRINT="samsung/goldenlteuc/goldenlteatt:4.4.2/KOT49H/G730AUCUBNG4:user/release-keys" PRIVATE_BUILD_DESC="goldenlteuc-user 4.4.2 KOT49H G730AUCUBNG4 release-keys"
 
-PRODUCT_DEVICE := loganreltexx
-PRODUCT_NAME := cm_loganreltexx
+PRODUCT_DEVICE := goldenlteatt
+PRODUCT_NAME := cm_goldenlteatt

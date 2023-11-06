@@ -23,7 +23,7 @@
 # inherit from common msm8930
 -include device/samsung/msm8930-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/loganreltexx/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/goldenlteatt/include
 
 # Kernel
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
@@ -31,34 +31,36 @@ BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
 TARGET_KERNEL_SOURCE         := kernel/samsung/msm8930-common
-TARGET_KERNEL_CONFIG         := cyanogen_loganre_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8930_loganre_eur_lte_defconfig
+TARGET_KERNEL_CONFIG         := cyanogen_golden_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8930_golden_att_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := loganreltexx,loganrelte,GT-S7275R,GT-S7275B,GT-S7275T
+TARGET_OTA_ASSERT_DEVICE := goldenlteatt,SM-G730A
 
 # Recovery
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_FSTAB := device/samsung/loganreltexx/rootdir/fstab.qcom
-TARGET_RECOVERY_INITRC := device/samsung/loganreltexx/rootdir/init.recovery.rc
+TARGET_RECOVERY_FSTAB := device/samsung/goldenlteatt/rootdir/fstab.qcom
+TARGET_RECOVERY_INITRC := device/samsung/goldenlteatt/rootdir/init.recovery.rc
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/lcd/panel/backlight\"
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1698693120
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 5693733888
-BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
+# Max boot size is 10485760 - 722944 = 9762816 to account for bootloader exploit
+BOARD_BOOTIMAGE_PARTITION_SIZE := 9762816
+# Recovery is redirected to the larger pad partition
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13107200
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1384120320
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 5519686656
+BOARD_CACHEIMAGE_PARTITION_SIZE := 734003200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/loganreltexx/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/goldenlteatt/bluetooth
 
 # NFC
 #BOARD_HAVE_NFC := true
@@ -97,3 +99,6 @@ TARGET_NEED_DISABLE_FACE_DETECTION_BOTH_CAMERAS := true
 
 # PowerHAL
 TARGET_POWERHAL_VARIANT := 
+
+# OutOfRange (bootloader exploit)
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/goldenlteatt/releasetools

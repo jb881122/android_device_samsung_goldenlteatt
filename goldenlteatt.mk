@@ -15,10 +15,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/samsung/loganreltexx/loganreltexx-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/goldenlteatt/goldenlteatt-vendor.mk)
 
 # Common overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/loganreltexx/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/goldenlteatt/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -206,6 +206,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable Samsung EMS dial path
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril.v3=samsungEMSReq
+
+# OutOfRange (bootloader exploit)
+PRODUCT_PACKAGES += \
+    oor \
+    oor.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale.language=en \
